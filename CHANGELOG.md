@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/Gitarcitano/febraban-bank-holidays/compare/v1.0.1...v1.1.0) (2025-07-04)
+
+
+### Bug Fixes
+
+* mark Dia da Consciência Negra as a national holiday from 2024 ([afe7c3d](https://github.com/Gitarcitano/febraban-bank-holidays/commit/afe7c3d27b22c447262d794acfd5a7c09ad8f5d9))
+
+
+### Features
+
+* **getBankHolidays:** now accepts array of years (string or number) ([754ef0b](https://github.com/Gitarcitano/febraban-bank-holidays/commit/754ef0ba4c1f8002e86d1d5d9b074419389f82de))
+
 ## [1.0.1](https://github.com/Gitarcitano/febraban-bank-holidays/compare/v1.0.0...v1.0.1) (2025-07-04)
 
 
