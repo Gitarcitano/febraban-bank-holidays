@@ -43,7 +43,7 @@ function parseISODate(dateStr: string): Date {
 }
 
 function getFixedHolidays(year: number): Holiday[] {
-  return [
+  const holidays = [
     { date: `${year}-01-01`, name: 'Confraternização Universal' },
     { date: `${year}-04-21`, name: 'Dia de Tiradentes' },
     { date: `${year}-05-01`, name: 'Dia do Trabalhador' },
@@ -51,9 +51,14 @@ function getFixedHolidays(year: number): Holiday[] {
     { date: `${year}-10-12`, name: 'Dia de Nossa Senhora Aparecida' },
     { date: `${year}-11-02`, name: 'Dia de Finados' },
     { date: `${year}-11-15`, name: 'Proclamação da República do Brasil' },
-    { date: `${year}-11-20`, name: 'Dia da Consciência Negra' },
     { date: `${year}-12-25`, name: 'Natal' },
   ];
+
+  if (year >= 2024) {
+    holidays.push({ date: `${year}-11-20`, name: 'Dia da Consciência Negra' });
+  }
+
+  return holidays;
 }
 
 function getMoveableHolidays(year: number): Holiday[] {

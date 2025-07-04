@@ -64,6 +64,12 @@ describe('febraban-bank-holidays', () => {
       expect(() => getBankHolidays(1582)).toThrow('Year must be between 1583 and 4099');
       expect(() => getBankHolidays(4100)).toThrow('Year must be between 1583 and 4099');
     });
+
+    it('should not include Dia da Consciência Negra for years before 2024', () => {
+      const holidays = getBankHolidays(2023);
+      const diaConscienciaNegra = holidays.find((h) => h.name === 'Dia da Consciência Negra');
+      expect(diaConscienciaNegra).toBeUndefined();
+    });
   });
 
   describe('isBankHoliday', () => {
