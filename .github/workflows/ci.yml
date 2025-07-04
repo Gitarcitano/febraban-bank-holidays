@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Clear npm cache
+      run: npm cache clean --force
     - run: npm ci
     - run: npm run build
     - run: npm test
@@ -34,7 +36,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
-      - run: npm ci
+      - name: Clear npm cache
+      run: npm cache clean --force
+    - run: npm ci
       - run: npm run build
       - name: Release
         env:
