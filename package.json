@@ -20,7 +20,7 @@
     "brazil",
     "typescript"
   ],
-  "author": "Seu Nome",
+  "author": "Giovanne Tarcitano",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.12",
@@ -36,10 +36,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/seu-usuario/febraban-bank-holidays.git"
+    "url": "https://github.com/Gitarcitano/febraban-bank-holidays.git"
   },
   "bugs": {
-    "url": "https://github.com/seu-usuario/febraban-bank-holidays/issues"
+    "url": "https://github.com/Gitarcitano/febraban-bank-holidays/issues"
   },
-  "homepage": "https://github.com/seu-usuario/febraban-bank-holidays#readme"
+  "homepage": "https://github.com/Gitarcitano/febraban-bank-holidays#readme"
 }

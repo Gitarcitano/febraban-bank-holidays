@@ -182,7 +182,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter)
+Giovanne Tarcitano - [@Gitarcitano](https://github.com/Gitarcitano)
 
 ## Acknowledgments
 
