@@ -52,7 +52,7 @@ function getFixedHolidays(year: number): Holiday[] {
     { date: `${year}-11-02`, name: 'Dia de Finados' },
     { date: `${year}-11-15`, name: 'Proclamação da República do Brasil' },
     { date: `${year}-11-20`, name: 'Dia da Consciência Negra' },
-        { date: `${year}-12-25`, name: 'Natal' }
+    { date: `${year}-12-25`, name: 'Natal' },
   ];
 }
 
@@ -70,7 +70,7 @@ function getMoveableHolidays(year: number): Holiday[] {
     { date: formatDateISO(carnivalMonday), name: 'Carnaval' },
     { date: formatDateISO(carnivalTuesday), name: 'Carnaval' },
     { date: formatDateISO(goodFriday), name: 'Sexta-Feira da Paixão' },
-    { date: formatDateISO(corpusChristi), name: 'Corpus Christi' }
+    { date: formatDateISO(corpusChristi), name: 'Corpus Christi' },
   ];
 }
 
@@ -92,17 +92,17 @@ export function isBankHoliday(date: string | Date): boolean {
   const year = parseInt(dateStr.substring(0, 4));
   const holidays = getBankHolidays(year);
 
-  return holidays.some(holiday => holiday.date === dateStr);
+  return holidays.some((holiday) => holiday.date === dateStr);
 }
 
 export function getNextBusinessDay(date: string | Date): string {
-  let currentDate = typeof date === 'string' ? parseISODate(date) : parseISODate(formatDateISO(date));
+  let currentDate =
+    typeof date === 'string' ? parseISODate(date) : parseISODate(formatDateISO(date));
   currentDate = addDays(currentDate, 1);
 
   while (true) {
     const dayOfWeek = currentDate.getUTCDay();
     const dateStr = formatDateISO(currentDate);
-
 
     if (dayOfWeek !== 0 && dayOfWeek !== 6 && !isBankHoliday(dateStr)) {
       return dateStr;
@@ -115,5 +115,5 @@ export function getNextBusinessDay(date: string | Date): string {
 export default {
   getBankHolidays,
   isBankHoliday,
-  getNextBusinessDay
+  getNextBusinessDay,
 };

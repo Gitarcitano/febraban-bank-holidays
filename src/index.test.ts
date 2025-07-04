@@ -1,4 +1,4 @@
-import { getBankHolidays, isBankHoliday, getNextBusinessDay, Holiday } from './';
+import { getBankHolidays, isBankHoliday, getNextBusinessDay } from './';
 
 describe('febraban-bank-holidays', () => {
   describe('getBankHolidays', () => {
@@ -20,11 +20,11 @@ describe('febraban-bank-holidays', () => {
         { date: '2025-11-02', name: 'Dia de Finados' },
         { date: '2025-11-15', name: 'Proclamação da República do Brasil' },
         { date: '2025-11-20', name: 'Dia da Consciência Negra' },
-        { date: '2025-12-25', name: 'Natal' }
+        { date: '2025-12-25', name: 'Natal' },
       ];
 
-      expectedHolidays.forEach(expected => {
-        const found = holidays.find(h => h.date === expected.date);
+      expectedHolidays.forEach((expected) => {
+        const found = holidays.find((h) => h.date === expected.date);
         expect(found).toBeDefined();
         expect(found?.name).toBe(expected.name);
       });
@@ -32,12 +32,12 @@ describe('febraban-bank-holidays', () => {
 
     it('should correctly calculate movable holidays for different years', () => {
       const holidays2024 = getBankHolidays(2024);
-      const carnival2024 = holidays2024.filter(h => h.name === 'Carnaval');
+      const carnival2024 = holidays2024.filter((h) => h.name === 'Carnaval');
       expect(carnival2024[0].date).toBe('2024-02-12'); // Segunda
       expect(carnival2024[1].date).toBe('2024-02-13'); // Terça
 
       const holidays2026 = getBankHolidays(2026);
-      const carnival2026 = holidays2026.filter(h => h.name === 'Carnaval');
+      const carnival2026 = holidays2026.filter((h) => h.name === 'Carnaval');
       expect(carnival2026[0].date).toBe('2026-02-16'); // Segunda
       expect(carnival2026[1].date).toBe('2026-02-17'); // Terça
     });
@@ -56,7 +56,7 @@ describe('febraban-bank-holidays', () => {
       const holidays2024 = getBankHolidays(2024);
       expect(holidays2024).toHaveLength(13);
 
-      const corpusChristi = holidays2024.find(h => h.name === 'Corpus Christi');
+      const corpusChristi = holidays2024.find((h) => h.name === 'Corpus Christi');
       expect(corpusChristi?.date).toBe('2024-05-30');
     });
 
