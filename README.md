@@ -130,9 +130,9 @@ Returns the next bank business day after the specified date.
 - 25 de dezembro - Natal
 
 ### Movable Holidays
-- Carnival Monday (48 days before Easter)
-- Carnival Tuesday (47 days before Easter)
-- Good Friday (2 days before Easter)
+- Segunda-feira de Carnaval (48 days before Easter)
+- Terça-feira de Carnaval (47 days before Easter)
+- Sexta-feira Santa (2 days before Easter)
 - Corpus Christi (60 days after Easter)
 
 ## Algorithm
@@ -186,5 +186,5 @@ Giovanne Tarcitano - [@Gitarcitano](https://github.com/Gitarcitano)
 
 ## Acknowledgments
 
-- FEBRABAN for standardizing bank holidays
+- [FEBRABAN for standardizing bank holidays](https://feriadosbancarios.febraban.org.br/)
 - Anonymous Gregorian Algorithm for accurate Easter calculation
