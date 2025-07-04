@@ -79,12 +79,12 @@ console.log(getNextBusinessDay('2025-01-03')); // '2025-01-06' (Friday → Monda
 
 ## API
 
-### `getBankHolidays(year: number): Holiday[]`
+### `getBankHolidays(years: number | string | (number | string)[]): Holiday[]`
 
-Returns all bank holidays for the specified year.
+Returns all bank holidays for the specified year or years.
 
 **Parameters:**
-- `year`: Desired year (between 1583 and 4099)
+- `years`: A single year, a string, or an array of years/strings (between 1583 and 4099)
 
 **Returns:**
 Array of `Holiday` objects sorted by date:
@@ -100,7 +100,7 @@ interface Holiday {
 Checks if a specific date is a bank holiday.
 
 **Parameters:**
-- `date`: Date in ISO string format or Date object
+- `date`: Date in ISO string format (YYYY-MM-DD) or Date object
 
 **Returns:**
 - `true` if it's a bank holiday
@@ -111,7 +111,7 @@ Checks if a specific date is a bank holiday.
 Returns the next bank business day after the specified date.
 
 **Parameters:**
-- `date`: Start date in ISO string format or Date object
+- `date`: Start date in ISO string format (YYYY-MM-DD) or Date object
 
 **Returns:**
 - String with the next business day's date in ISO format

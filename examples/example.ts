@@ -45,11 +45,11 @@ businessDayExamples.forEach(example => {
 // 4. Comparar feriados entre anos
 console.log('\n=== Comparação de Carnaval entre Anos ===');
 const years = [2024, 2025, 2026, 2027, 2028];
+const holidaysForYears = getBankHolidays(years);
 
 years.forEach(year => {
-  const holidays = getBankHolidays(year);
-  const carnivalDates = holidays
-    .filter(h => h.name === 'Carnaval')
+  const carnivalDates = holidaysForYears
+    .filter(h => h.name === 'Carnaval' && h.date.startsWith(String(year)))
     .map(h => h.date);
 
   console.log(`${year}: ${carnivalDates.join(' e ')}`);
@@ -97,4 +97,12 @@ holidays2025.forEach(holiday => {
     const weekday = dayOfWeek === 0 ? 'Domingo' : 'Sábado';
     console.log(`${holiday.date} (${weekday}) - ${holiday.name}`);
   }
+});
+
+// 7. Listar feriados de múltiplos anos
+console.log('\n=== Feriados de 2028 e 2029 ===');
+const holidays2028_2029 = getBankHolidays([2028, '2029']);
+
+holidays2028_2029.forEach(holiday => {
+    console.log(`${holiday.date} - ${holiday.name}`);
 });
