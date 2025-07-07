@@ -77,6 +77,17 @@ console.log(getNextBusinessDay('2025-02-28')); // '2025-03-05' (skips Carnival)
 console.log(getNextBusinessDay('2025-01-03')); // '2025-01-06' (Friday → Monday)
 ```
 
+### Check if a date is a business day
+
+```typescript
+import { isBusinessDay } from 'febraban-bank-holidays';
+
+// Check if a date is a business day
+console.log(isBusinessDay('2025-07-08')); // true
+console.log(isBusinessDay('2025-07-12')); // false (weekend)
+console.log(isBusinessDay('2025-01-01')); // false (holiday)
+```
+
 ## API
 
 ### `getBankHolidays(years: number | string | (number | string)[]): Holiday[]`
@@ -115,6 +126,17 @@ Returns the next bank business day after the specified date.
 
 **Returns:**
 - String with the next business day's date in ISO format
+
+### `isBusinessDay(date: string | Date): boolean`
+
+Checks if a specific date is a bank business day (not a weekend or holiday).
+
+**Parameters:**
+- `date`: Date in ISO string format (YYYY-MM-DD) or Date object
+
+**Returns:**
+- `true` if it's a business day
+- `false` otherwise
 
 ## Included Holidays
 

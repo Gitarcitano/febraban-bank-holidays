@@ -1,4 +1,4 @@
-import { getBankHolidays, isBankHoliday, getNextBusinessDay } from './';
+import { getBankHolidays, isBankHoliday, getNextBusinessDay, isBusinessDay } from './';
 
 describe('febraban-bank-holidays', () => {
   describe('getBankHolidays', () => {
@@ -98,6 +98,26 @@ describe('febraban-bank-holidays', () => {
     it('should skip combinations of weekends and holidays', () => {
       expect(getNextBusinessDay('2025-09-04')).toBe('2025-09-05');
       expect(getNextBusinessDay('2025-09-05')).toBe('2025-09-08');
+    });
+  });
+
+  describe('isBusinessDay', () => {
+    it('should return true for a regular business day', () => {
+      expect(isBusinessDay('2025-07-08')).toBe(true);
+    });
+
+    it('should return false for a weekend', () => {
+      expect(isBusinessDay('2025-07-12')).toBe(false);
+      expect(isBusinessDay('2025-07-13')).toBe(false);
+    });
+
+    it('should return false for a holiday', () => {
+      expect(isBusinessDay('2025-01-01')).toBe(false);
+    });
+
+    it('should accept a Date object as a parameter', () => {
+      expect(isBusinessDay(new Date('2025-07-08'))).toBe(true);
+      expect(isBusinessDay(new Date('2025-07-12'))).toBe(false);
     });
   });
 });

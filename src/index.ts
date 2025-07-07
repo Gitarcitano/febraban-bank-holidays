@@ -169,8 +169,24 @@ export function getNextBusinessDay(date: string | Date): string {
   }
 }
 
+export function isBusinessDay(date: string | Date): boolean {
+  const currentDate = typeof date === 'string' ? parseISODate(date) : date;
+  const dayOfWeek = currentDate.getUTCDay();
+
+  if (dayOfWeek === 0 || dayOfWeek === 6) {
+    return false;
+  }
+
+  if (isBankHoliday(currentDate)) {
+    return false;
+  }
+
+  return true;
+}
+
 export default {
   getBankHolidays,
   isBankHoliday,
   getNextBusinessDay,
+  isBusinessDay,
 };
