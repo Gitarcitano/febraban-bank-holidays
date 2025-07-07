@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getBankHolidays = getBankHolidays;
 exports.isBankHoliday = isBankHoliday;
 exports.getNextBusinessDay = getNextBusinessDay;
+exports.isBusinessDay = isBusinessDay;
 /**
  * Calculates the date of Easter for a given year.
  * @param year - The year to calculate Easter for.
@@ -144,9 +145,21 @@ function getNextBusinessDay(date) {
         currentDate = addDays(currentDate, 1);
     }
 }
+function isBusinessDay(date) {
+    const currentDate = typeof date === 'string' ? parseISODate(date) : date;
+    const dayOfWeek = currentDate.getUTCDay();
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+        return false;
+    }
+    if (isBankHoliday(currentDate)) {
+        return false;
+    }
+    return true;
+}
 exports.default = {
     getBankHolidays,
     isBankHoliday,
     getNextBusinessDay,
+    isBusinessDay,
 };
 //# sourceMappingURL=index.js.map

@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Gitarcitano/febraban-bank-holidays/compare/v1.1.2...v1.2.0) (2025-07-07)
+
+
+### Features
+
+* **api:** add isBusinessDay function and examples ([6f145c2](https://github.com/Gitarcitano/febraban-bank-holidays/commit/6f145c2ca3e6a4e6984b2d073c9dfc7501e2f8d4))
+
 ## [1.1.2](https://github.com/Gitarcitano/febraban-bank-holidays/compare/v1.1.1...v1.1.2) (2025-07-04)
 
 ## [1.1.1](https://github.com/Gitarcitano/febraban-bank-holidays/compare/v1.1.0...v1.1.1) (2025-07-04)

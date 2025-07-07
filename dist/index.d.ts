@@ -22,10 +22,12 @@ export declare function isBankHoliday(date: string | Date): boolean;
  * @returns The next business day as a string in YYYY-MM-DD format.
  */
 export declare function getNextBusinessDay(date: string | Date): string;
+export declare function isBusinessDay(date: string | Date): boolean;
 declare const _default: {
     getBankHolidays: typeof getBankHolidays;
     isBankHoliday: typeof isBankHoliday;
     getNextBusinessDay: typeof getNextBusinessDay;
+    isBusinessDay: typeof isBusinessDay;
 };
 export default _default;
 //# sourceMappingURL=index.d.ts.map
